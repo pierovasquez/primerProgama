@@ -18,7 +18,6 @@ public class TestPiero {
 		}
 	}
 	//Metodo que reciba un array numérico e indique si los numeros que lo componen esta ordenados de forma creciente, descendiente, se encuentrar revueltos o son iguales.
-	
 	public static String comprobarArray(int[] arr) {
 		boolean asc = true, desc = true;
 		

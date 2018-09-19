@@ -17,9 +17,22 @@ public class TestPiero2 {
 		return sum == num ? "Perfecto" : "Común";
 	}
 	
+	//Metodo que indique si una cadena es palindromo o no ( un palindromo es una palabra o expresion que se lee igual de izquierda a derecha que de derecha a izquierda
+	private static String describirCadena(String cadena) {
+		for (int i = 0, j = cadena.length() - 1; j >= 0; i++, j--) {
+			if(cadena.charAt(i) != cadena.charAt(j)) {
+				return "No es palindromo";
+			}
+		}
+		return "Si es palindromo";
+	}
+	
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		System.out.println(comprobarPerfecto(6));
+		
+		System.out.println(describirCadena("sugusu"));
 	}
 
 }

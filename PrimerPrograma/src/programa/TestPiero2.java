@@ -1,5 +1,10 @@
 package programa;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 public class TestPiero2 {
 
 	//Metodo que indique si un numero es perfecto, un numero es perfecto si la suma de sus divisores(sin contarse a sí mismo) es el mismo numero.
@@ -27,12 +32,32 @@ public class TestPiero2 {
 		return "Si es palindromo";
 	}
 	
+	//Metodo que a partir de una cadena indique cuales son los caracteres que la componen, cuantas veces estan dentro de la cadena y en que posiciones.
+	
+	private static void describirCadena2(String cadena) {
+		Map<Character, List<Integer>> descripcion = new HashMap<>();
+		for(int i = 0; i < cadena.length(); ++i) {
+			char a = cadena.charAt(i);
+			List<Integer> lista = descripcion.get(a);
+			if (lista == null) {
+				lista = new ArrayList<Integer>();
+				descripcion.put(a, lista);
+			}
+			lista.add(i);
+		}
+		for (Map.Entry<Character, List<Integer>> entry : descripcion.entrySet()) {
+			System.out.println(entry.getKey() + " -> " + entry.getValue());
+		}
+		
+	}
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		System.out.println(comprobarPerfecto(6));
 		
 		System.out.println(describirCadena("sugusu"));
+		
+		describirCadena2("A continuación les muestro la resolución de un examen práctico de Java para obtener");
 	}
 
 }
